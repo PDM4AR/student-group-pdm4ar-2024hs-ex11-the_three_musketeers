@@ -76,7 +76,7 @@ class SpaceshipAgent(Agent):
 
         #
         # TODO: Implement Compute Initial Trajectory
-        #
+        # Notes: start with straight line (is allowed to be infeasible, pg. 27)
 
         self.cmds_plan, self.state_traj = self.planner.compute_trajectory(self.init_state, self.goal_state)
 
@@ -96,7 +96,7 @@ class SpaceshipAgent(Agent):
 
         #
         # TODO: Implement scheme to replan
-        #
+        # Notes: Start without replanning
 
         # ZeroOrderHold
         # cmds = self.cmds_plan.at_or_previous(sim_obs.time)

@@ -125,6 +125,7 @@ class SpaceshipPlanner:
         #
         # TODO: Implement SCvx algorithm or comparable
         #
+        # Notes: starts at pg. 31
 
         self._convexification()
         try:
@@ -212,18 +213,21 @@ class SpaceshipPlanner:
 
         self.problem_parameters["init_state"].value = self.X_bar[:, 0]
         # ...
+        # Notes: check pg. 28
 
     def _check_convergence(self) -> bool:
         """
         Check convergence of SCvx.
         """
-
+        # TODO
         pass
 
     def _update_trust_region(self):
         """
         Update trust region radius.
         """
+        # TODO
+        # Notes: check pg. (29)
         pass
 
     @staticmethod
