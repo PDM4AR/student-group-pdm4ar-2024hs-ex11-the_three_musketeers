@@ -125,6 +125,8 @@ class SpaceshipPlanner:
         #
         # TODO: Implement SCvx algorithm or comparable
         #
+        # Notes: starts at pg. 31
+        # Set E to Identity
 
         self._convexification()
         try:
@@ -196,6 +198,8 @@ class SpaceshipPlanner:
         # Example objective
         objective = self.params.weight_p @ self.variables["p"]
 
+        # Notes: Cost function, add virtual controll input to be minimized as well (pg. 32)
+
         return cvx.Minimize(objective)
 
     def _convexification(self):
@@ -212,18 +216,24 @@ class SpaceshipPlanner:
 
         self.problem_parameters["init_state"].value = self.X_bar[:, 0]
         # ...
+        # Notes: check pg. 28
 
     def _check_convergence(self) -> bool:
         """
         Check convergence of SCvx.
         """
-
+        # TODO
+        # Notes: check pg. 36
+        # Check if predicted cost improvement is smaller than epsilon (denominator of acc)
         pass
 
     def _update_trust_region(self):
         """
         Update trust region radius.
         """
+        # TODO
+        # Notes: check pg. (29), (33), 35
+        # Calculate convexification accuracy (pg. 35)
         pass
 
     @staticmethod
